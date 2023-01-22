@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_height="match_parent"
+    android:layout_width="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <ScrollView
+        android:id="@+id/banner"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/banner"
+        tools:context=".MainActivity">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <RelativeLayout
+                android:layout_marginTop="22dp"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_alignParentStart="true"
+                    android:src="@drawable/distintivo"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:contentDescription="@string/logotipo" />
+
+                <ImageView
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/tesaka_logo"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
+                    android:contentDescription="@string/logotesaka" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <ScrollView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/banner">
+
+        <LinearLayout
+            android:id="@+id/bodyLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txtTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/personalizacion"
+                android:textColor="#707070"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/txtSubtitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtTitulo"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/subtituloPersonalizacion"
+                android:textColor="#707070"
+                android:textSize="12sp" />
+
+            <TableRow
+                android:id="@+id/datosRUC"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/txtSubtitulo"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:weightSum="10">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/etRUCLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="4">
+
+                    <EditText
+                        android:id="@+id/etRUC"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/ruc"
+                        android:inputType="date"
+                        android:nextFocusForward="@id/etEstablecimiento" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/etDVLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1">
+
+                    <EditText
+                        android:id="@+id/etDV"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/dv"
+                        android:inputType="" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/etEstablecimientoLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <EditText
+                        android:id="@+id/etEstablecimiento"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/cod_establ"
+                        android:inputType="number"
+                        android:maxLength="3" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <Button
+                    android:id="@+id/btnObtener"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_weight="1.5"
+                    android:background="@drawable/custom_btn_azul"
+                    android:drawableStart="@drawable/ic_search"
+                    android:text="@string/obtener"
+                    android:textColor="#ffff" />
+            </TableRow>
+
+            <LinearLayout
+                android:id="@+id/InformacionMarangatu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/datosRUC"
+                android:layout_margin="20dp"
+                android:background="@drawable/border"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/etNombreLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/etNombre"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/nombre"
+                        android:inputType="text" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <EditText
+                        android:id="@+id/etNombreFantasia"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="@string/nombre_fantasia"
+                        android:inputType="text" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:weightSum="10">
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="4">
+
+                        <EditText
+                            android:id="@+id/etDireccion"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="@string/direccion"
+                            android:inputType="text" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="6">
+
+                        <EditText
+                            android:id="@+id/etTelefono"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:hint="@string/telefono"
+                            android:inputType="text" />
+
+                    </android.support.design.widget.TextInputLayout>
+
+                </TableRow>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tvDatosTimbrado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/InformacionMarangatu"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="10dp"
+                android:text="@string/factura_virtual"
+                android:textColor="#707070"
+                android:textSize="20sp" />
+
+            <TableRow
+                android:id="@+id/rowDatosTimbrado"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tvDatosTimbrado"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="20dp"
+                android:weightSum="10">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/etTimbradoLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="3">
+
+                    <EditText
+                        android:id="@+id/etTimbrado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/timbrado"
+                        android:inputType="number"
+                        android:maxLength="8"
+                        android:nextFocusForward="@id/etPuntoExpedicion" />
+
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/etPuntoExpedicionLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="2">
+
+                    <EditText
+                        android:id="@+id/etPuntoExpedicion"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/p_exped"
+                        android:inputType="number"
+                        android:maxLength="3"
+                        android:nextFocusForward="@id/etVigencia" />
+                </android.support.design.widget.TextInputLayout>
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/etVigenciaLayout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="5">
+
+                    <EditText
+                        android:id="@+id/etVigencia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/inicio_vigencia"
+                        android:inputType="date"
+                        android:maxLength="10"
+                        android:nextFocusForward="@id/etLicencia" />
+
+                </android.support.design.widget.TextInputLayout>
+
+
+            </TableRow>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <android.support.design.widget.TextInputLayout
+                    android:id="@+id/etLicenciaLayout"
+                    android:layout_width="266dp"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/rowDatosTimbrado"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp">
+
+                    <EditText
+                        android:id="@+id/etLicencia"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="@string/licencia"
+                        android:inputType="text"
+                        android:maxLength="50" />
+
+
+                </android.support.design.widget.TextInputLayout>
+
+
+                <Button
+                    android:id="@+id/btnObtenerSerial"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_btn_azul"
+                    android:drawableStart="@drawable/ic_copy"
+                    android:layout_marginEnd="20dp"
+                    />
+
+
+                <EditText
+                    android:id="@+id/etFchVencimientoLicencia"
+                    android:layout_width="0dp"
+                    android:layout_height="0dp"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btnAceptar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_btn_azul"
+                    android:drawableStart="@drawable/ic_check_square"
+                    android:text="@string/aceptar"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#ffff" />
+
+                <Button
+                    android:id="@+id/btnCancelar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_btn_gris"
+                    android:drawableStart="@drawable/ic_reply"
+                    android:text="@string/cancelar"
+                    android:layout_marginEnd="20dp"
+                    android:textColor="#000000" />
+
+                <Button
+                    android:visibility="invisible"
+                    android:id="@+id/btnEliminar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/custom_btn_rojo"
+                    android:drawableStart="@drawable/ic_trash_alt"
+                    android:text="@string/borrar"
+                    android:textColor="#ffffff" />
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</RelativeLayout>
