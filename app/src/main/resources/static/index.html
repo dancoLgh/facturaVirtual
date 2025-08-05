@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Factura Virtual Web</title>
+</head>
+<body>
+<h1>Factura Virtual</h1>
+
+<section>
+  <h2>Registro</h2>
+  <form id="registerForm">
+    <input type="text" id="ruc" placeholder="RUC" required />
+    <input type="text" id="dv" placeholder="DV" required />
+    <input type="text" id="nombre" placeholder="Nombre" required />
+    <input type="text" id="direccion" placeholder="Dirección" />
+    <button type="submit">Registrar</button>
+  </form>
+</section>
+
+<section>
+  <h2>Factura</h2>
+  <form id="invoiceForm">
+    <input type="text" id="invRuc" placeholder="RUC" required />
+    <input type="text" id="descripcion" placeholder="Descripción" required />
+    <input type="number" id="cantidad" placeholder="Cantidad" required />
+    <input type="number" id="precio" placeholder="Precio Unitario" required step="0.01" />
+    <button type="submit">Generar</button>
+  </form>
+  <pre id="invoiceResult"></pre>
+</section>
+
+<script>
+document.getElementById('registerForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const payload = {
+    ruc: document.getElementById('ruc').value,
+    dv: document.getElementById('dv').value,
+    nombre: document.getElementById('nombre').value,
+    direccion: document.getElementById('direccion').value
+  };
+  await fetch('/api/register', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  });
+  alert('Registrado');
+});
+
+document.getElementById('invoiceForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const payload = {
+    ruc: document.getElementById('invRuc').value,
+    descripcion: document.getElementById('descripcion').value,
+    cantidad: parseInt(document.getElementById('cantidad').value),
+    precioUnitario: parseFloat(document.getElementById('precio').value)
+  };
+  const res = await fetch('/api/invoice', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify(payload)
+  });
+  const data = await res.json();
+  document.getElementById('invoiceResult').textContent = JSON.stringify(data, null, 2);
+});
+</script>
+</body>
+</html>
