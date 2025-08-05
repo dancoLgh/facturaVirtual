@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Obtener desde Marangatú"
+        android:textSize="18dp"
+        android:layout_marginTop="20dp"
+        />
+
+    <LinearLayout
+        android:layout_margin="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@drawable/border"
+        >
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/etUsuarioLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="10dp">
+
+            <EditText
+                android:id="@+id/etUsuario"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Usuario"
+                android:inputType="date"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"/>
+
+        </android.support.design.widget.TextInputLayout>
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/etContrasenaLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <EditText
+                android:id="@+id/etContrasena"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="Contrasena"
+
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:inputType="textPassword" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Switch
+            android:id="@+id/swRecordar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="20dp"
+            android:text="Recordar Datos         " />
+        <Button
+            android:layout_margin="20dp"
+            android:layout_gravity="center"
+            android:id="@+id/btnLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_btn_azul"
+            android:drawableStart="@drawable/ic_paper_plane"
+            android:text="@string/aceptar"
+            android:textColor="#ffff" />
+
+        <Button
+            android:layout_gravity="center"
+            android:id="@+id/btnCancelarLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/custom_btn_gris"
+            android:drawableStart="@drawable/ic_reply"
+            android:text="@string/cancelar"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textColor="#000000" />
+
+    </LinearLayout>
+</LinearLayout>
