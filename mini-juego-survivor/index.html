@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bridge Survivor - Prototipo</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="game-shell">
+    <header class="hud-top">
+      <div><strong>Nivel:</strong> <span id="level">1</span></div>
+      <div><strong>Puntaje:</strong> <span id="score">0</span></div>
+      <div><strong>Mejora:</strong> <span id="weaponLevel">1</span></div>
+      <div><strong>Vidas:</strong> <span id="lives">3</span></div>
+    </header>
+
+    <section class="controls-info">
+      <p>
+        🕹️ Mover: <kbd>A</kbd>/<kbd>D</kbd> o <kbd>←</kbd>/<kbd>→</kbd>
+        &nbsp;&nbsp;•&nbsp;&nbsp;
+        🔥 Disparo automático
+      </p>
+      <button id="restart" hidden>Reiniciar partida</button>
+    </section>
+
+    <canvas id="game" width="420" height="720" aria-label="Juego tipo bridge survivor"></canvas>
+
+    <footer class="legend">
+      <span>🟢 +Soldados</span>
+      <span>🔵 +Daño</span>
+      <span>🟣 +Cadencia</span>
+      <span>🟠 +Puntos</span>
+      <span>🔴 Peligro</span>
+    </footer>
+  </main>
+
+  <script src="game.js"></script>
+</body>
+</html>
